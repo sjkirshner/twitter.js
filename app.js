@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const nunjucks = require('nunjucks');
 const routes = require('./routes');
 
-
+let locals = {};
 
 nunjucks.configure('views', {noCache: true});
 nunjucks.render('index.html', locals, function (err, output) {
@@ -21,11 +21,6 @@ app.engine('html', nunjucks.render); // when giving html files to res.render, te
 // })
 
 app.use('/', routes);
-
-
-
-
-
 
 
 
