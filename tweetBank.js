@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-let data = [{name: 'sangwoo', content: 'heyy'}, {name: 'sara', content: 'gurll'}];
+let data = [{name: 'sangwoo', content: 'heyy'}, {name: 'sangwoo', content: 'gurll'}];
 
 function add (name, content) {
   data.push({ name: name, content: content });

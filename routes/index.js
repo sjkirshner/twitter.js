@@ -13,15 +13,21 @@ router.get('/stylesheets/style.css', function(req,res){
   res.sendFile(path.resolve(__dirname,'../public/stylesheets/style.css'));
 })
 
+router.get('/users/:name', function(req, res) {
+  var name = ""+req.params.name;
+  var list = tweetBank.find( {'name':name} );
+  console.log(list)
+  res.render( 'index', { tweets: list } );
+});
+
 module.exports = router;
 
 
 
 
-// const tweetBank = require('../tweetBank');
-
 // tweetBank.add('gabe', 'mindblown');
 
 // console.log('list: ', tweetBank.list());
 
-// console.log('find: ', tweetBank.find({'name':'gabe', 'content':'mindblown'}));
+// console.log('find: ', tweetBank.find( {'name':'gabe'} ));
+//returns array of objs
